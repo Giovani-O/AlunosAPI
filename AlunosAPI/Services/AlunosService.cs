@@ -59,7 +59,7 @@ namespace AlunosAPI.Services
             }
         }
 
-        public async Task CreateAlunos(Aluno aluno)
+        public async Task CreateAluno(Aluno aluno)
         {
             try
             {
