@@ -16,6 +16,13 @@ namespace AlunosAPI.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<IdentityUserLogin<string>>(entity =>
+            {
+                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
+            });
+
             modelBuilder.Entity<Aluno>().HasData(
                 new Aluno { Id = 1, Nome = "Nerevarine", Email = "nerevarine@gmail.com", Idade = 30 },
                 new Aluno { Id = 2, Nome = "Miraak", Email = "miraak@gmail.com", Idade = 45 },
